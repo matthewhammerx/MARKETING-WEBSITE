@@ -246,7 +246,7 @@ section {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  padding: 9px 9px 9px 20px;
+  padding: 6px 8px 6px 16px;
   max-width: none;
   margin: 0;
 }
@@ -259,19 +259,19 @@ section {
 }
 
 .brand-logo {
-  height: 20px;
+  height: 17px;
   width: auto;
   display: block;
 }
 
 .footer-brand .brand-logo {
-  height: 23px;
+  height: 20px;
 }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 26px;
+  gap: 20px;
 }
 
 .nav-links a {
