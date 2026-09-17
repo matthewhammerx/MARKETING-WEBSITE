@@ -8,7 +8,71 @@ document.addEventListener("DOMContentLoaded", () => {
   initWorkFilters();
   initContactForm();
   initFooterYear();
+  initCountUp();
 });
+
+function initCountUp() {
+  const items = document.querySelectorAll(".stat-strip-item .num");
+  if (!items.length) return;
+
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const parsed = Array.from(items).map((el) => {
+    const match = el.textContent.match(/^([^0-9]*)([0-9]+(?:\.[0-9]+)?)(.*)$/);
+    return match
+      ? {
+          el,
+          prefix: match[1],
+          target: parseFloat(match[2]),
+          decimals: (match[2].split(".")[1] || "").length,
+          suffix: match[3],
+        }
+      : null;
+  });
+
+  function animate(item) {
+    if (!item) return;
+    if (reduceMotion) return;
+
+    const duration = 1400;
+    const start = performance.now();
+
+    function step(now) {
+      const t = Math.min(1, (now - start) / duration);
+      const eased = 1 - Math.pow(1 - t, 3);
+      const value = item.target * eased;
+      item.el.textContent = item.prefix + value.toFixed(item.decimals) + item.suffix;
+      if (t < 1) {
+        requestAnimationFrame(step);
+      } else {
+        item.el.textContent = item.prefix + item.target.toFixed(item.decimals) + item.suffix;
+      }
+    }
+
+    requestAnimationFrame(step);
+  }
+
+  if (!("IntersectionObserver" in window)) {
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const item = parsed.find((p) => p && p.el === entry.target);
+          animate(item);
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.4 }
+  );
+
+  parsed.forEach((item) => {
+    if (item) observer.observe(item.el);
+  });
+}
 
 function initNavToggle() {
   const toggle = document.querySelector(".nav-toggle");
