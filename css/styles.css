@@ -243,6 +243,9 @@ section {
   align-items: center;
   color: var(--color-text);
   flex-shrink: 0;
+}
+
+.nav .brand {
   pointer-events: auto;
   background: rgba(10, 10, 10, 0.85);
   backdrop-filter: blur(12px);
@@ -298,7 +301,7 @@ section {
     padding: 0 16px;
   }
 
-  .brand {
+  .nav .brand {
     padding: 10px 16px;
   }
 
