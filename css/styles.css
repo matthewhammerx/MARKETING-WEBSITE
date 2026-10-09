@@ -39,6 +39,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 110px;
 }
 
 body {
@@ -329,10 +330,6 @@ section {
 }
 
 @media (max-width: 900px) {
-  .nav-cta .btn-ghost {
-    display: none;
-  }
-
   .nav-toggle {
     display: flex;
   }

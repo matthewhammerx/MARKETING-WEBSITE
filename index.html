@@ -18,14 +18,8 @@
   <header class="site-header">
     <nav class="nav">
       <a href="index.html" class="brand"><img src="images/Scaleflow (3)-cropped.svg" alt="Scaleflow" class="brand-logo" /></a>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="advisory.html">Advisory</a></li>
-      </ul>
       <div class="nav-cta">
-        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
+        <a href="#contact" class="btn btn-ghost">Get in touch</a>
       </div>
     </nav>
   </header>
@@ -132,7 +126,7 @@
           </div>
         </div>
         <div class="work-with-us">
-          <a href="contact.html" class="btn btn-primary">Work directly with us</a>
+          <a href="#contact" class="btn btn-primary">Work directly with us</a>
         </div>
       </div>
     </section>
@@ -242,18 +236,93 @@
             <p>Weekly reporting and monthly strategy reviews keep <strong>every campaign improving</strong>.</p>
           </div>
         </div>
-        <div style="text-align:center; margin-top:40px;">
-          <a href="contact.html" class="btn btn-primary">Book a free consult</a>
-        </div>
       </div>
     </section>
 
-    <!-- Closing CTA -->
-    <section>
-      <div class="exclusive-cta">
-        <h2>Looking to work with Scaleflow?</h2>
-        <p>For serious brands ready to scale.</p>
-        <a href="contact.html" class="btn btn-primary">Get in touch</a>
+    <!-- Contact -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-tag">
+          <span class="section-num">[ 06 ]</span>
+        </div>
+        <h2 style="text-align:center; font-size: clamp(30px, 4.4vw, 44px);">Looking to work with <span class="script-word">Scaleflow</span>?</h2>
+        <p style="text-align:center; max-width:640px; margin:16px auto 0;">For serious brands ready to scale. Tell us about your goals — we'll follow up within one business day.</p>
+      </div>
+      <div class="container contact-grid" style="margin-top:56px;">
+
+        <div class="reveal">
+          <form id="contact-form" novalidate>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="name">Full name</label>
+                <input type="text" id="name" name="name" placeholder="Jane Doe" required />
+              </div>
+              <div class="form-field">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="jane@company.com" required />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="company">Company</label>
+                <input type="text" id="company" name="company" placeholder="Company name" />
+              </div>
+              <div class="form-field">
+                <label for="budget">Monthly budget</label>
+                <select id="budget" name="budget">
+                  <option value="">Select a range</option>
+                  <option value="under-2500">Under $2,500</option>
+                  <option value="2500-6000">$2,500 – $6,000</option>
+                  <option value="6000-15000">$6,000 – $15,000</option>
+                  <option value="15000+">$15,000+</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="message">Tell us about your goals</label>
+              <textarea id="message" name="message" placeholder="What are you hoping to achieve in the next 6-12 months?" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Send message</button>
+            <p class="form-note">By submitting, you agree to be contacted about your inquiry. We never share your information with third parties.</p>
+          </form>
+
+          <div id="form-success" class="form-success">
+            <div class="icon">✓</div>
+            <h3>Thanks — message received.</h3>
+            <p>We'll follow up within one business day.</p>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <div class="contact-info-item">
+            <div class="card-icon">✉</div>
+            <div>
+              <h4>Email</h4>
+              <p><a href="mailto:info@scaleflowbrands.com">info@scaleflowbrands.com</a></p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="card-icon">☎</div>
+            <div>
+              <h4>Phone</h4>
+              <p><a href="tel:+15555550123">(555) 555-0123</a></p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="card-icon">⌂</div>
+            <div>
+              <h4>Studio</h4>
+              <p>412 Congress Ave, Suite 300<br />Austin, TX 78701</p>
+            </div>
+          </div>
+
+          <div style="margin-top: 32px; border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 28px;">
+            <h3 style="margin-bottom: 8px; font-size: 17px; font-weight: 500;">Prefer to talk it through?</h3>
+            <p style="font-size: 14px; margin-bottom: 20px;">Book a free 30-minute consult directly — no forms required.</p>
+            <a href="mailto:info@scaleflowbrands.com?subject=Free%20Consult%20Request" class="btn btn-ghost btn-block">Book a free consult</a>
+          </div>
+        </div>
+
       </div>
     </section>
 
