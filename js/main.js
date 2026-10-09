@@ -9,56 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initContactForm();
   initFooterYear();
   initCountUp();
-  initWorkCarousel();
 });
-
-function initWorkCarousel() {
-  const wrap = document.querySelector(".brand-marquee-wrap");
-  const track = document.querySelector(".brand-marquee-track");
-  const dotsWrap = document.querySelector(".carousel-dots");
-  if (!wrap || !track || !dotsWrap) return;
-
-  const tiles = Array.from(track.children);
-  const dots = Array.from(dotsWrap.children);
-
-  function setActive(index) {
-    dots.forEach((dot, i) => dot.classList.toggle("active", i === index));
-  }
-
-  function closestTileIndex() {
-    const wrapRect = wrap.getBoundingClientRect();
-    const center = wrapRect.left + wrapRect.width / 2;
-    let closest = 0;
-    let closestDist = Infinity;
-    tiles.forEach((tile, i) => {
-      const rect = tile.getBoundingClientRect();
-      const dist = Math.abs(rect.left + rect.width / 2 - center);
-      if (dist < closestDist) {
-        closestDist = dist;
-        closest = i;
-      }
-    });
-    return closest;
-  }
-
-  dots.forEach((dot, i) => {
-    dot.addEventListener("click", () => {
-      tiles[i].scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
-    });
-  });
-
-  let ticking = false;
-  wrap.addEventListener("scroll", () => {
-    if (ticking) return;
-    ticking = true;
-    requestAnimationFrame(() => {
-      setActive(closestTileIndex());
-      ticking = false;
-    });
-  });
-
-  setActive(0);
-}
 
 function initCountUp() {
   const items = document.querySelectorAll(".stat-strip-item .num");
