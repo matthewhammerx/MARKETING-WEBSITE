@@ -278,18 +278,16 @@ section {
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.02em;
-  color: var(--color-text);
-  background: rgba(10, 10, 10, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--color-border);
+  color: var(--color-accent-ink);
+  background: var(--color-text);
+  border: 1px solid var(--color-text);
   border-radius: 999px;
   padding: 13px 24px;
-  transition: border-color 0.15s ease, background 0.15s ease;
+  transition: opacity 0.15s ease;
 }
 
 .nav-links a:hover {
-  border-color: rgba(255, 255, 255, 0.4);
+  opacity: 0.85;
 }
 
 @media (max-width: 480px) {
